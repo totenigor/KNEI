@@ -76,7 +76,6 @@ class RectButton
     fill(TbuttonColor);
     textSize(TSize);
     text(label, buttonX + TPixelWidth/2, buttonY+25);
-    
   };
   
   void hvrClk()
@@ -91,8 +90,7 @@ class RectButton
          SMTM(message);
          print(message);
          fill(3, 156, 3);
-        textSize(60);
-        text(message, dataLog.areaWidth/2 - MPixelWidth*2, dataLog.areaY + dataLog.areaHeight- MPixelWidth);
+         dataLog.SCM(message);
        };
      }else
      {

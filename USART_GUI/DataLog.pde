@@ -13,6 +13,8 @@ class DataLog
   int min;
   int minAct;
   
+  String currentMessage;
+  
   DataLog(int areaX, int areaY, int areaWidth, int areaHeight)
   {
     this.areaX = areaX;
@@ -22,6 +24,8 @@ class DataLog
     
     Background = color(65);
     TextColor = color(3, 156, 3);
+    
+    currentMessage = "NO DATA SENT PREVIOUSLY";
   };
   
   void createDataLog()
@@ -35,6 +39,15 @@ class DataLog
     text(secAct, areaWidth/2, areaY + 30);
     textSize(25);
     text(minAct + " m ", areaWidth/2 - 45, areaY + 30);
+    
+    textSize(40);
+    text(currentMessage, areaWidth/2 - textWidth(currentMessage)/2, areaY + areaHeight - 20);
+
+  };
+  
+  void SCM(String message)                          //SET CURRENT MESSAGE
+  {
+    currentMessage = message;
   };
   
   void timeIsTicking()
