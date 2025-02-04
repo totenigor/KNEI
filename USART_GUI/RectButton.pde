@@ -9,8 +9,6 @@ class RectButton
   
   String label;
   int TSize;
-  int TWidth;
-  int THeight;
   
   color TbuttonColor;
   color buttonBasic;
@@ -26,8 +24,10 @@ class RectButton
   
   DataLog dataLog;
   
+  boolean clickedBefore;
+  
   RectButton(int buttonX, int buttonY, int buttonWidth, int buttonHeight, 
-             String baseColor, String label, int TSize, int TWidth, int THeight, 
+             String baseColor, String label, int TSize, 
              String message, ButtonColors buttonColors, DataLog dataLog)
   {
     this.buttonX = buttonX;
@@ -39,8 +39,6 @@ class RectButton
 
     this.label = label;
     this.TSize = TSize;   
-    this.TWidth = TWidth;
-    this.THeight = THeight;
     
     this.message = message;
     
@@ -67,6 +65,8 @@ class RectButton
     
     TPixelWidth = textWidth(label);
     MPixelWidth = textWidth(message);
+    
+    clickedBefore = false;
   };
  
   void createButton()
@@ -75,7 +75,7 @@ class RectButton
     rect(buttonX, buttonY, buttonWidth, buttonHeight);
     fill(TbuttonColor);
     textSize(TSize);
-    text(label, buttonX + TPixelWidth/2, buttonY+25);
+    text(label, buttonX + TPixelWidth, buttonY+50);
   };
   
   void hvrClk()
@@ -89,8 +89,14 @@ class RectButton
          delay(200);
          SMTM(message);
          print(message);
-         fill(3, 156, 3);
          dataLog.SCM(message);
+         //if(clickedBefore)
+         //{
+         //  dataLog.SPM();
+         //  clickedBefore = false;
+         //  print("! ZADZIALALO !");
+         //};
+         //clickedBefore = true;
        };
      }else
      {
