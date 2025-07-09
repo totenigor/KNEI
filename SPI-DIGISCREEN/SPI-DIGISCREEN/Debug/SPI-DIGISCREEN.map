@@ -4,6 +4,8 @@ c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
                               C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/AVR-Dx_DFP/2.5.294/gcc/dev/avr16dd28/avrxmega3/crtavr16dd28.o (exit)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
                               main.o (__do_copy_data)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+                              main.o (__do_clear_bss)
 
 Discarded input sections
 
@@ -15,9 +17,6 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
- .text.fill     0x00000000       0x22 main.o
- .data.oneByOne
-                0x00000000        0x8 main.o
  .data.specialNums
                 0x00000000        0x4 main.o
  .text          0x00000000        0x0 SPI.o
@@ -55,6 +54,22 @@ Discarded input sections
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
  .text.libgcc.fixed
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
 
 Memory Configuration
 
@@ -186,7 +201,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x178
+.text           0x00000000      0x226
  *(.vectors)
  .vectors       0x00000000       0x90 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/AVR-Dx_DFP/2.5.294/gcc/dev/avr16dd28/avrxmega3/crtavr16dd28.o
                 0x00000000                __vector_default
@@ -229,6 +244,8 @@ END GROUP
  *(.init4)
  .init4         0x0000009c       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
                 0x0000009c                __do_copy_data
+ .init4         0x000000b2       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+                0x000000b2                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -239,65 +256,67 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x000000b2        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/AVR-Dx_DFP/2.5.294/gcc/dev/avr16dd28/avrxmega3/crtavr16dd28.o
+ .init9         0x000000c2        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/AVR-Dx_DFP/2.5.294/gcc/dev/avr16dd28/avrxmega3/crtavr16dd28.o
  *(.init9)
  *(.text)
- .text          0x000000ba        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/AVR-Dx_DFP/2.5.294/gcc/dev/avr16dd28/avrxmega3/crtavr16dd28.o
-                0x000000ba                __vector_22
-                0x000000ba                __vector_28
-                0x000000ba                __vector_1
-                0x000000ba                __vector_32
-                0x000000ba                __vector_34
-                0x000000ba                __vector_24
-                0x000000ba                __vector_12
-                0x000000ba                __bad_interrupt
-                0x000000ba                __vector_6
-                0x000000ba                __vector_31
-                0x000000ba                __vector_35
-                0x000000ba                __vector_3
-                0x000000ba                __vector_23
-                0x000000ba                __vector_30
-                0x000000ba                __vector_25
-                0x000000ba                __vector_11
-                0x000000ba                __vector_13
-                0x000000ba                __vector_17
-                0x000000ba                __vector_19
-                0x000000ba                __vector_7
-                0x000000ba                __vector_27
-                0x000000ba                __vector_5
-                0x000000ba                __vector_33
-                0x000000ba                __vector_4
-                0x000000ba                __vector_9
-                0x000000ba                __vector_2
-                0x000000ba                __vector_21
-                0x000000ba                __vector_15
-                0x000000ba                __vector_29
-                0x000000ba                __vector_8
-                0x000000ba                __vector_26
-                0x000000ba                __vector_14
-                0x000000ba                __vector_10
-                0x000000ba                __vector_16
-                0x000000ba                __vector_18
-                0x000000ba                __vector_20
-                0x000000be                . = ALIGN (0x2)
+ .text          0x000000ca        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/AVR-Dx_DFP/2.5.294/gcc/dev/avr16dd28/avrxmega3/crtavr16dd28.o
+                0x000000ca                __vector_22
+                0x000000ca                __vector_28
+                0x000000ca                __vector_1
+                0x000000ca                __vector_32
+                0x000000ca                __vector_34
+                0x000000ca                __vector_24
+                0x000000ca                __vector_12
+                0x000000ca                __bad_interrupt
+                0x000000ca                __vector_6
+                0x000000ca                __vector_31
+                0x000000ca                __vector_35
+                0x000000ca                __vector_3
+                0x000000ca                __vector_23
+                0x000000ca                __vector_30
+                0x000000ca                __vector_25
+                0x000000ca                __vector_11
+                0x000000ca                __vector_13
+                0x000000ca                __vector_17
+                0x000000ca                __vector_19
+                0x000000ca                __vector_7
+                0x000000ca                __vector_27
+                0x000000ca                __vector_5
+                0x000000ca                __vector_33
+                0x000000ca                __vector_4
+                0x000000ca                __vector_9
+                0x000000ca                __vector_2
+                0x000000ca                __vector_21
+                0x000000ca                __vector_15
+                0x000000ca                __vector_29
+                0x000000ca                __vector_8
+                0x000000ca                __vector_26
+                0x000000ca                __vector_14
+                0x000000ca                __vector_10
+                0x000000ca                __vector_16
+                0x000000ca                __vector_18
+                0x000000ca                __vector_20
+                0x000000ce                . = ALIGN (0x2)
  *(.text.*)
  .text.digiScreen_ini
-                0x000000be       0x38 DIGISCREENini.o
-                0x000000be                digiScreen_ini
- .text.erase    0x000000f6       0x1a main.o
-                0x000000f6                erase
- .text.main     0x00000110       0x1a main.o
-                0x00000110                main
- .text.spi_ini  0x0000012a       0x24 SPI.o
-                0x0000012a                spi_ini
+                0x000000ce       0x38 DIGISCREENini.o
+                0x000000ce                digiScreen_ini
+ .text.fill     0x00000106       0x2a main.o
+                0x00000106                fill
+ .text.erase    0x00000130       0x2a main.o
+                0x00000130                erase
+ .text.main     0x0000015a       0x7e main.o
+                0x0000015a                main
+ .text.spi_ini  0x000001d8       0x24 SPI.o
+                0x000001d8                spi_ini
  .text.spi_sendByte
-                0x0000014e       0x26 SPI.o
-                0x0000014e                spi_sendByte
-                0x00000174                . = ALIGN (0x2)
+                0x000001fc       0x26 SPI.o
+                0x000001fc                spi_sendByte
+                0x00000222                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000174        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
-                0x00000174                _exit
-                0x00000174                exit
+ .fini9         0x00000222        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+                0x00000222                _exit
+                0x00000222                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -316,38 +335,43 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000174        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .fini0         0x00000222        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000178                _etext = .
+                0x00000226                _etext = .
 
 .rodata
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.r*)
 
-.data           0x00807800        0x0 load address 0x00000178
+.data           0x00807800        0x8 load address 0x00000226
                 0x00807800                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
+ .data.oneByOne
+                0x00807800        0x8 main.o
+                0x00807800                oneByOne
  *(.gnu.linkonce.d*)
-                0x00807800                . = ALIGN (0x2)
-                0x00807800                _edata = .
-                0x00807800                PROVIDE (__data_end, .)
+                0x00807808                . = ALIGN (0x2)
+                0x00807808                _edata = .
+                0x00807808                PROVIDE (__data_end, .)
 
-.bss            0x00807800        0x0
-                [!provide]                PROVIDE (__bss_start, .)
+.bss            0x00807808       0x10
+                0x00807808                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
+ .bss.memory    0x00807808       0x10 main.o
+                0x00807808                memory
  *(COMMON)
-                [!provide]                PROVIDE (__bss_end, .)
-                0x00000178                __data_load_start = LOADADDR (.data)
-                0x00000178                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00807818                PROVIDE (__bss_end, .)
+                0x00000226                __data_load_start = LOADADDR (.data)
+                0x0000022e                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00807800        0x0
+.noinit         0x00807818        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00807800                _end = .
+                0x00807818                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -426,12 +450,12 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x2956
+.debug_info     0x00000000     0x2a32
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x22a4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/AVR-Dx_DFP/2.5.294/gcc/dev/avr16dd28/avrxmega3/crtavr16dd28.o
  .debug_info    0x000022a4       0xe5 DIGISCREENini.o
- .debug_info    0x00002389      0x288 main.o
- .debug_info    0x00002611      0x345 SPI.o
+ .debug_info    0x00002389      0x364 main.o
+ .debug_info    0x000026ed      0x345 SPI.o
 
 .debug_abbrev   0x00000000     0x239c
  *(.debug_abbrev)
@@ -440,12 +464,12 @@ END GROUP
  .debug_abbrev  0x00002159      0x14d main.o
  .debug_abbrev  0x000022a6       0xf6 SPI.o
 
-.debug_line     0x00000000      0x4cf
+.debug_line     0x00000000      0x50b
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x16f C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/AVR-Dx_DFP/2.5.294/gcc/dev/avr16dd28/avrxmega3/crtavr16dd28.o
  .debug_line    0x0000016f       0x8f DIGISCREENini.o
- .debug_line    0x000001fe      0x179 main.o
- .debug_line    0x00000377      0x158 SPI.o
+ .debug_line    0x000001fe      0x1b5 main.o
+ .debug_line    0x000003b3      0x158 SPI.o
 
 .debug_frame    0x00000000       0xa4
  *(.debug_frame)
@@ -453,14 +477,14 @@ END GROUP
  .debug_frame   0x0000002c       0x44 main.o
  .debug_frame   0x00000070       0x34 SPI.o
 
-.debug_str      0x00000000     0x1287
+.debug_str      0x00000000     0x128e
  *(.debug_str)
  .debug_str     0x00000000      0xefb C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/AVR-Dx_DFP/2.5.294/gcc/dev/avr16dd28/avrxmega3/crtavr16dd28.o
  .debug_str     0x00000efb      0x141 DIGISCREENini.o
                                 0x146 (size before relaxing)
- .debug_str     0x0000103c       0xc0 main.o
-                                0x225 (size before relaxing)
- .debug_str     0x000010fc      0x18b SPI.o
+ .debug_str     0x0000103c       0xc7 main.o
+                                0x22c (size before relaxing)
+ .debug_str     0x00001103      0x18b SPI.o
                                 0x325 (size before relaxing)
 
 .debug_loc      0x00000000      0x183

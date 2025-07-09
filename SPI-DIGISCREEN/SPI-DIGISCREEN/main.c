@@ -16,17 +16,20 @@ char specialNums[4] = {6,9, 121, 166};
 	
 char oneByOne[8] = {1, 2, 4, 8, 16, 32, 64, 128};
 	
+signed int memory[8] = {0};
+		
 //FILL & ERASE funcs
 
 void fill(char x, char y)
 {
-	_delay_ms(1000);
-	spi_sendByte(x, oneByOne[y-1]);
+	memory[x-1] += oneByOne[y-1];
+	spi_sendByte(x, memory[x-1]);
 }
 
 void erase(char x, char y)
 {
-	_delay_ms(1000);
+	memory[x-1] -= oneByOne[y-1];
+	spi_sendByte(x, memory[x-1]);
 }
 
 int main(void)
@@ -35,8 +38,20 @@ int main(void)
 	digiScreen_ini();
 	
 	//TESTING FUNCTIONS
-	spi_sendByte(4,255);
-	erase(4,8);
+	fill(3,3); //4
+	fill(6,3);
+	fill(2,5);
+	fill(3,6); //32 + 4, lacznie 36
+	fill(4,6);
+	fill(5,6);
+	fill(6,6);
+	fill(7,5);
+	_delay_ms(1000);
+	erase(3,3);//36 - 4 = 32
+	_delay_ms(3000);
+	fill(3,3);
+	
+	
 	
 	//PLAYING WITH THE DISPLAY
 	/*
